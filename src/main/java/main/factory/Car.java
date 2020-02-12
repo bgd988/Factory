@@ -109,6 +109,10 @@ public class Car {
         return this.vehicleType;
     }
     
+    public void setMileage(int customMileage) {
+        this.mileage = customMileage;
+    }
+    
     public int getMileage () {
         return this.mileage;
     }
