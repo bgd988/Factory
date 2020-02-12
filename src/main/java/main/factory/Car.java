@@ -11,6 +11,7 @@ public class Car {
     private int maxFuel;
     private int currentFuel;
     private int consumption;
+    private int mileage;
     
     public Car(){
     this.model = "";
@@ -19,6 +20,7 @@ public class Car {
     this.currentFuel = 0;
     this.consumption = 0;
     this.maxFuel = 0;
+    this.mileage = 0;
     }
     
     public Car(String customModel, int customBuildYear, String customColor, int customMaxFuel, int customCurrentFuel ){
@@ -33,6 +35,13 @@ public class Car {
           this.model = customModel;
           this.buildYear = customBuildYear;
           this.currentFuel = customCurrentFuel;
+    }
+    
+    public Car(String customModel, int customBuildYear, int customCurrentFuel, int customMileage ){
+          this.model = customModel;
+          this.buildYear = customBuildYear;
+          this.currentFuel = customCurrentFuel;
+          this.mileage = customMileage;
     }
     
     
@@ -100,6 +109,10 @@ public class Car {
         return this.vehicleType;
     }
     
+    public int getMileage () {
+        return this.mileage;
+    }
+    
   
     public void showData() {
         System.out.println("Model:" + this.getModel());
@@ -109,6 +122,7 @@ public class Car {
         System.out.println("Maksimalna brzina:" + this.getMaxSpeed());
         System.out.println("Stanje rezervoara:" + this.getCurrentFuel());
         System.out.println("Maksimum rezervoara:" + this.getMaxFuel());
+        System.out.println("Broj predjenih km:" + this.getMileage());
         System.out.println();
     }
     

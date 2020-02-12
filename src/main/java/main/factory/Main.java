@@ -23,6 +23,9 @@ public class Main {
 
         Car bmw = new Car("BMW X5", 2016, "White", 20, 5);
         bmw.showData();
+        
+        Car mercedes = new Car("Mercedes A3", 2015, 25, 35);
+        mercedes.showData();
 //        //fiat.model = "Fiat Punto";
 //        fiat.setModel("Fiat Punto");
 //        fiat.setbuildYear(2010);
