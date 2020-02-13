@@ -131,9 +131,9 @@ public class Car {
     }
     
     public void travel(int distanceTraveled){
-        //1. definisati novi atribut 'mileage'
-        //2. napraviti get i set metode
-        //3. prosiriti jedan od koknstruktora da moze da se setuje i mileage
+        //1. definisati novi atribut 'mileage'  OK
+        //2. napraviti get i set metode   OK
+        //3. prosiriti jedan od koknstruktora da moze da se setuje i mileage  OK
         //kolicina goriva da se smanji za onoliko koliko je potroseno
         // kilometraza da se uveca
         
