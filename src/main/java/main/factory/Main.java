@@ -17,15 +17,24 @@ public class Main {
 
         System.out.println();
 
-        Car fiat = new Car("Fiat punto", 2010, "Black", 10, 5);
-        fiat.showData();
+//        Car fiat = new Car("Fiat punto", 2010, "Black", 10, 5);
+//        fiat.showData();
+//        
+//
+//        Car bmw = new Car("BMW X5", 2016, "White", 20, 5);
+//        bmw.showData();
         
-
-        Car bmw = new Car("BMW X5", 2016, "White", 20, 5);
-        bmw.showData();
-        
-        Car mercedes = new Car("Mercedes A3", 2015, 25, 35);
+        Car mercedes = new Car("A klasa", 100, 10, 50, 15);
         mercedes.showData();
+        
+        mercedes.travel(20);
+         mercedes.showData();
+         
+         mercedes.fuelUp(10);
+         mercedes.showData();
+         mercedes.travel(1000);
+         mercedes.showData();
+       
 //        //fiat.model = "Fiat Punto";
 //        fiat.setModel("Fiat Punto");
 //        fiat.setbuildYear(2010);

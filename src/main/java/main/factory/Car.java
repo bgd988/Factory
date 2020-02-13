@@ -11,7 +11,12 @@ public class Car {
     private int maxFuel;
     private int currentFuel;
     private int consumption;
-    private int mileage;
+    private double mileage;
+    private int passengers;
+    private int maxSeats; //
+    
+   
+
     
     public Car(){
     this.model = "";
@@ -21,28 +26,33 @@ public class Car {
     this.consumption = 0;
     this.maxFuel = 0;
     this.mileage = 0;
+    this.passengers = 1;
+    this.maxSeats = 0;
+    
     }
     
-    public Car(String customModel, int customBuildYear, String customColor, int customMaxFuel, int customCurrentFuel ){
+    public Car(String customModel, double customMileage, int customConsumption, int customMaxFuel, int customCurrentFuel){
           this.model = customModel;
-          this.buildYear = customBuildYear;
-          this.color = customColor;
           this.maxFuel = customMaxFuel;
           this.currentFuel = customCurrentFuel;
-    }
-    
-    public Car(String customModel, int customBuildYear, int customCurrentFuel ){
-          this.model = customModel;
-          this.buildYear = customBuildYear;
-          this.currentFuel = customCurrentFuel;
-    }
-    
-    public Car(String customModel, int customBuildYear, int customCurrentFuel, int customMileage ){
-          this.model = customModel;
-          this.buildYear = customBuildYear;
-          this.currentFuel = customCurrentFuel;
           this.mileage = customMileage;
+          this.consumption = customConsumption;
+          
     }
+    
+   
+//    public Car(String customModel, int customBuildYear, int customCurrentFuel ){
+//          this.model = customModel;
+//          this.buildYear = customBuildYear;
+//          this.currentFuel = customCurrentFuel;
+//    }
+//    
+//    public Car(String customModel, int customBuildYear, int customCurrentFuel, int customMileage ){
+//          this.model = customModel;
+//          this.buildYear = customBuildYear;
+//          this.currentFuel = customCurrentFuel;
+//          this.mileage = customMileage;
+//    }
     
     
     
@@ -91,6 +101,8 @@ public class Car {
         return this.currentFuel;
     }
        
+       
+       
     public void setConsumption(int customConsumption) {
         this.consumption = customConsumption;
     }
@@ -113,8 +125,24 @@ public class Car {
         this.mileage = customMileage;
     }
     
-    public int getMileage () {
+    public double getMileage () {
         return this.mileage;
+    }
+    
+    public int getPassengers(){
+       return this.passengers;
+    }
+    
+    public void setPassengers(int customPassengers){
+     this.passengers = customPassengers;
+    }
+    
+    public void getOut(){
+    //1 osoba je izasla iz vozila
+    }
+    
+    public void getOut(int numberOfPeople){
+    //numberOfPeople osoba je izaslo napolje
     }
     
   
@@ -130,14 +158,41 @@ public class Car {
         System.out.println();
     }
     
-    public void travel(int distanceTraveled){
-        //1. definisati novi atribut 'mileage'  OK
-        //2. napraviti get i set metode   OK
-        //3. prosiriti jedan od koknstruktora da moze da se setuje i mileage  OK
+    public void travel(int distance) {
+        
+        if (this.getCurrentFuel()> (distance * this.getCurrentFuel()) / 100) {
+            this.mileage = this.getMileage() + distance;
+            this.currentFuel = this.getCurrentFuel() - (distance * this.getCurrentFuel()) / 100;
+        } else {
+            System.out.println("nema dovoljno goriva za put" + distance); 
+        }
+    }
+    
+      public void fuelUp(int refill) {
+            int emptySpace = this.getMaxFuel () - this.getCurrentFuel();
+            
+            if(refill < emptySpace) {
+                this.currentFuel = this.getCurrentFuel() + refill;
+                System.out.println("Uspesno ste sipali: " + refill + "Novo stanje je:" + this.getCurrentFuel());
+            }
+          
+            this.currentFuel = this.getCurrentFuel() + refill;
+           
+    }
+      
+      
+      
+       
+      
+      //stanje 30, pokusavamo da sipamo 7, uspesno ste sipali 7l, novo stanje je 37
+      // stanje 30, pokusavamo da sipamo 40, sipano je 20, rezervoar je pun
+    
+    
+        
         //kolicina goriva da se smanji za onoliko koliko je potroseno
         // kilometraza da se uveca
         
         //opciono: novi atiribut za stanje motora, da li je automobil ukljucen ili ne
-    }
+    
     
 }
