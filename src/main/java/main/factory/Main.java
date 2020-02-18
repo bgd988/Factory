@@ -17,52 +17,25 @@ public class Main {
 
         System.out.println();
 
-//        Car fiat = new Car("Fiat punto", 2010, "Black", 10, 5);
-//        fiat.showData();
-//        
-//
+
+
+        Car mercedes = new Car("A klasa", 100, 10, 100, 15);
+        mercedes.showData();
+        
+        mercedes.travel(50);
+         mercedes.showData();
+         
+         mercedes.fuelUp(100);
+         mercedes.showData();
+         
+         mercedes.travel(100);
+         mercedes.showData();
+       
+
 //        Car bmw = new Car("BMW X5", 2016, "White", 20, 5);
 //        bmw.showData();
         
-        Car mercedes = new Car("A klasa", 100, 10, 50, 15);
-        mercedes.showData();
-        
-        mercedes.travel(20);
-         mercedes.showData();
-         
-         mercedes.fuelUp(10);
-         mercedes.showData();
-         mercedes.travel(1000);
-         mercedes.showData();
-       
-//        //fiat.model = "Fiat Punto";
-//        fiat.setModel("Fiat Punto");
-//        fiat.setbuildYear(2010);
-//        fiat.setColor("Black");
-//        fiat.setConsumption(6);
-//        fiat.setMaxSpeed(180);
-//        fiat.setCurrentFuel(20);
-//        fiat.setMaxFuel(10);
-//
-//        fiat.showData();
-//
-//        System.out.println();
-//
-//        Car ford = new Car();
-//
-//        //  ford.model = "Focus";
-//        ford.setModel("Ford Fiesta");
-//        ford.setbuildYear(2015);
-//        ford.setColor("white");
-//        ford.setConsumption(10);
-//        ford.setMaxSpeed(220);
-//        ford.setCurrentFuel(30);
-//        ford.setMaxFuel(60);
-//
-//        ford.showData();
-//
-//        System.out.println();
-//
+
 //        Car bmw = new Car();
 //
 //        //bmw.model = "X5";

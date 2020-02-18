@@ -13,7 +13,6 @@ public class Car {
     private int consumption;
     private double mileage;
     private int passengers;
-    private int maxSeats; //
     
    
 
@@ -27,7 +26,6 @@ public class Car {
     this.maxFuel = 0;
     this.mileage = 0;
     this.passengers = 1;
-    this.maxSeats = 0;
     
     }
     
@@ -163,6 +161,7 @@ public class Car {
         if (this.getCurrentFuel()> (distance * this.getCurrentFuel()) / 100) {
             this.mileage = this.getMileage() + distance;
             this.currentFuel = this.getCurrentFuel() - (distance * this.getCurrentFuel()) / 100;
+            System.out.println("Uspesno ste putovali: " + distance);
         } else {
             System.out.println("nema dovoljno goriva za put" + distance); 
         }
@@ -174,7 +173,12 @@ public class Car {
             if(refill < emptySpace) {
                 this.currentFuel = this.getCurrentFuel() + refill;
                 System.out.println("Uspesno ste sipali: " + refill + "Novo stanje je:" + this.getCurrentFuel());
+            } else {
+                this.currentFuel = this.getMaxFuel();
+                System.out.println("Rezervoar je pun. Sipali ste: " + (emptySpace));
             }
+            
+             
           
             this.currentFuel = this.getCurrentFuel() + refill;
            
