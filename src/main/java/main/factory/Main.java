@@ -19,17 +19,24 @@ public class Main {
 
 
 
-        Car mercedes = new Car("A klasa", 100, 10, 100, 15);
-        mercedes.showData();
+        Car mercedes = new Car("A klasa", 100, 10, 100, 50, 4);
+     //   mercedes.showData();
         
-        mercedes.travel(50);
-         mercedes.showData();
+ //       mercedes.travel(50);
+ //        mercedes.showData();
          
-         mercedes.fuelUp(100);
-         mercedes.showData();
+ //        mercedes.fuelUp(100);
+ //        mercedes.showData();
          
-         mercedes.travel(100);
-         mercedes.showData();
+ //        mercedes.travel(100);
+  //       mercedes.showData();
+               mercedes.showData();
+   //      mercedes.passengersIn(3);
+         mercedes.passengersIn(3);
+            mercedes.passengersIn(1);
+            mercedes.passengersIn(1);
+           
+      
        
 
 //        Car bmw = new Car("BMW X5", 2016, "White", 20, 5);

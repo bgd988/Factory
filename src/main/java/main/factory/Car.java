@@ -12,7 +12,8 @@ public class Car {
     private int currentFuel;
     private int consumption;
     private double mileage;
-    private int passengers;
+    private int currentPassengers;
+    private int maxPassengers;
     
    
 
@@ -25,16 +26,18 @@ public class Car {
     this.consumption = 0;
     this.maxFuel = 0;
     this.mileage = 0;
-    this.passengers = 1;
+    this.currentPassengers = 1;
+    this.maxPassengers = 0;
     
     }
     
-    public Car(String customModel, double customMileage, int customConsumption, int customMaxFuel, int customCurrentFuel){
+    public Car(String customModel, double customMileage, int customConsumption, int customMaxFuel, int customCurrentFuel, int customMaxPassengers){
           this.model = customModel;
           this.maxFuel = customMaxFuel;
           this.currentFuel = customCurrentFuel;
           this.mileage = customMileage;
           this.consumption = customConsumption;
+          this.maxPassengers = customMaxPassengers;
           
     }
     
@@ -127,13 +130,24 @@ public class Car {
         return this.mileage;
     }
     
-    public int getPassengers(){
-       return this.passengers;
+    public void setCurrentPassengers(int customCurrentPassengers){
+      this.currentPassengers = customCurrentPassengers;
     }
     
-    public void setPassengers(int customPassengers){
-     this.passengers = customPassengers;
+    public int getCurrentPassengers(){
+       return this.currentPassengers;
     }
+    
+      public void setMaxPassengers(int customMaxPassengers) {
+        this.maxPassengers = customMaxPassengers;
+    }
+    
+       public int getMaxPassengers (){
+        return this.maxPassengers;
+    }
+       
+    
+ 
     
     public void getOut(){
     //1 osoba je izasla iz vozila
@@ -153,6 +167,7 @@ public class Car {
         System.out.println("Stanje rezervoara:" + this.getCurrentFuel());
         System.out.println("Maksimum rezervoara:" + this.getMaxFuel());
         System.out.println("Broj predjenih km:" + this.getMileage());
+        System.out.println("Broj putika u vozilu:" + this.getCurrentPassengers());
         System.out.println();
     }
     
@@ -176,11 +191,25 @@ public class Car {
             } else {
                 this.currentFuel = this.getMaxFuel();
                 System.out.println("Rezervoar je pun. Sipali ste: " + (emptySpace));
+            }          
+                      
+            this.currentFuel = this.getCurrentFuel() + refill;
+           
+    }      
+       public void passengersIn(int passengersUp) {
+            int totalPassengers = this.getMaxPassengers() - this.getCurrentPassengers();
+            
+            if(passengersUp <= totalPassengers) {
+                this.currentPassengers = this.getCurrentPassengers() + passengersUp;
+                System.out.println("U vozilo je usao/lo: " + passengersUp + " putnik/a" + ", novi broj putnika je: " + this.getCurrentPassengers());
+            } else {
+                this.currentPassengers = this.getMaxPassengers();
+                System.out.println("Vozilo je puno. U vozilu je: " + (maxPassengers) + " Putnika" + ", Potrazite drugo taksi vozilo");
             }
             
              
           
-            this.currentFuel = this.getCurrentFuel() + refill;
+          //  this.currentPassengers = this.getCurrentPassengers() + passengersUp;
            
     }
       
