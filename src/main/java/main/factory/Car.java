@@ -14,6 +14,7 @@ public class Car {
     private double mileage;
     private int currentPassengers;
     private int maxPassengers;
+    private int passengersOut;
     
    
 
@@ -28,6 +29,7 @@ public class Car {
     this.mileage = 0;
     this.currentPassengers = 1;
     this.maxPassengers = 0;
+    this.passengersOut = 0;
     
     }
     
@@ -138,6 +140,14 @@ public class Car {
        return this.currentPassengers;
     }
     
+      public void setPassengersOut(int customPassengersOut){
+    this.passengersOut = customPassengersOut;
+    }
+    
+        public int getPassengersOut(){
+       return this.passengersOut;
+    }
+    
       public void setMaxPassengers(int customMaxPassengers) {
         this.maxPassengers = customMaxPassengers;
     }
@@ -146,17 +156,6 @@ public class Car {
         return this.maxPassengers;
     }
        
-    
- 
-    
-    public void getOut(){
-    //1 osoba je izasla iz vozila
-    }
-    
-    public void getOut(int numberOfPeople){
-    //numberOfPeople osoba je izaslo napolje
-    }
-    
   
     public void showData() {
         System.out.println("Model:" + this.getModel());
@@ -167,6 +166,7 @@ public class Car {
         System.out.println("Stanje rezervoara:" + this.getCurrentFuel());
         System.out.println("Maksimum rezervoara:" + this.getMaxFuel());
         System.out.println("Broj predjenih km:" + this.getMileage());
+        System.out.println("Broj putika u vozilu:" + this.getCurrentPassengers());
         System.out.println("Broj putika u vozilu:" + this.getCurrentPassengers());
         System.out.println();
     }
@@ -207,7 +207,28 @@ public class Car {
                 System.out.println("Vozilo je puno. U vozilu je: " + (maxPassengers) + " Putnika" + ", Potrazite drugo taksi vozilo");
             }
             
+            
              
+            
+          
+          //  this.currentPassengers = this.getCurrentPassengers() + passengersUp;
+           
+    }
+       
+              public void passengersOut(int passengersDown) {
+            int totalPassengers = this.getMaxPassengers() - this.getCurrentPassengers();
+            
+            if(passengersDown <= totalPassengers || passengersDown >0) {
+                this.currentPassengers = this.getCurrentPassengers() - passengersDown;
+                System.out.println("Iz vozila je izasao/lo: " + passengersDown + " putnik/a" + ", novi broj putnika je: " + this.getCurrentPassengers());
+            } else {
+                this.currentPassengers = this.getMaxPassengers();
+                System.out.println("Uneli ste pogresnu vrednost: " + (maxPassengers) + " Putnika" + ", Potrazite drugo taksi vozilo");
+            }
+            
+            
+             
+            
           
           //  this.currentPassengers = this.getCurrentPassengers() + passengersUp;
            

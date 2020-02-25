@@ -19,7 +19,7 @@ public class Main {
 
 
 
-        Car mercedes = new Car("A klasa", 100, 10, 100, 50, 4);
+        Car mercedes = new Car("A klasa", 100, 10, 100, 50, 5);
      //   mercedes.showData();
         
  //       mercedes.travel(50);
@@ -31,9 +31,11 @@ public class Main {
  //        mercedes.travel(100);
   //       mercedes.showData();
                mercedes.showData();
-   //      mercedes.passengersIn(3);
-         mercedes.passengersIn(3);
+        mercedes.passengersIn(3);
+         mercedes.passengersIn(5);
             mercedes.passengersIn(1);
+            mercedes.passengersIn(1);
+            mercedes.passengersOut(4);
             mercedes.passengersIn(1);
            
       
